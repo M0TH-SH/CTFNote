@@ -1,90 +1,56 @@
 [![CTFNote logo](screenshots/logo_small.webp)](screenshots/logo.png)
 
-# CTFNote
+# CTFNote - Coolify Optimized
+
+> **Note**: This is a Coolify-optimized fork of the original [CTFNote](https://github.com/TFNS/CTFNote) project. This version is specifically configured for easy deployment with Coolify.
 
 ## Introduction
 
-CTFNote is a collaborative tool aiming to help CTF teams to organise their work.
+CTFNote is a collaborative tool aiming to help CTF teams to organise their work. This fork provides a streamlined deployment experience for Coolify users with pre-configured Docker Compose files, environment templates, and automated SSL/security settings.
 
 [![Screenshot of the task list](screenshots/task_small.webp)](screenshots/task.png)
 
-## Installation
+## What's Different in This Fork
 
-**Before starting**, make sure to copy `.env.example` to `.env` and fill in the information in the `.env` file.
+### 🚀 Coolify-Optimized Deployment
+- **Ready-to-use Docker Compose**: `docker-compose.coolify.yml` with Coolify-specific configurations
+- **Environment Templates**: `.env.coolify` with production-ready defaults
+- **Automated SSL**: HTTPS enabled by default with proper domain configuration
+- **Security Hardening**: CSP enabled, filesystem uploads, secure session handling
 
-### Running the Docker containers
+### 📦 Additional Files
+- `docker-compose.coolify.yml` - Coolify-optimized Docker Compose configuration
+- `.env.coolify` - Environment template with Coolify variables
+- `INSTALLATION.md` - Step-by-step Coolify deployment guide
+- `setup-coolify.sh` - Automated setup script
 
-You can build and start CTFNote with `docker compose`. The default
-configuration makes it super easy to start a new instance!
+### 🔧 Configuration Changes
+- **Port Mapping**: Changed from `127.0.0.1:8080:80` to `80:80` for Coolify compatibility
+- **Domain Handling**: Uses `${FQDN}` variable for automatic domain configuration
+- **Security**: CSP enabled, filesystem uploads instead of imgur
+- **Labels**: Coolify management labels added
 
-Building CTFNote requires at least 3 GB of RAM. If you want to host CTFNote
-on a server with less than 3 GB of RAM, you can use the pre-build images
-from the GitHub Container Registry.
+## Quick Start with Coolify
 
-To use the pre-build images, download `docker-compose.yml` (for example through cloning the repository) and run:
+1. **Deploy in Coolify**:
+   - Go to your Coolify dashboard
+   - Click "New Resource" > "Application"
+   - Choose "Docker Compose" as type
+   - Repository URL: `https://github.com/M0TH-SH/CTFNote.git`
+   - Compose file: `docker-compose.coolify.yml`
 
-```shell
-sudo docker compose up -d --pull always
-```
+2. **Configure Environment Variables**:
+   - Copy settings from `.env.coolify`
+   - Set `CMD_DOMAIN` to your domain
+   - Generate and set `SESSION_SECRET` (64+ characters)
 
-### Self-build images
+3. **Deploy**!
 
-You can build and start CTFNote with `docker compose`. The default
-configuration makes it super easy to start a new instance!
+For detailed instructions, see [INSTALLATION.md](INSTALLATION.md)
 
-```shell
-sudo docker compose up -d --build
-```
+## Traditional Installation
 
-### Accessing the instance
-
-The instance will spawn a web server on port `127.0.0.1:8080`. The first account created will
-have administrative privileges.
-
-Please use nginx to make it available over HTTPS.
-
-### Enable HTTPS with nginx
-
-It is assumed that you want to serve CTFNote over HTTPS.
-
-An example configuration for `nginx` on the host looks like this:
-
-```
-server {
-        server_name ctfnote.my.domain;
-
-        root /var/www/html;
-        index index.html;
-
-        location / {
-                proxy_pass http://127.0.0.1:8080/;
-                proxy_http_version 1.1;
-                proxy_set_header Upgrade $http_upgrade;
-                proxy_set_header Connection $http_connection;
-                proxy_set_header Host $http_host;
-                proxy_set_header X-Real-IP $remote_addr;
-                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-                proxy_set_header X-Forwarded-Proto $scheme;
-                add_header Pragma "no-cache";
-                client_max_body_size 5M;
-        }
-}
-```
-
-Edit the `.env` file to instruct the pad to use TLS:
-
-```diff
- # Secure: we're using HTTPS
--# CMD_PROTOCOL_USESSL=true
-+CMD_PROTOCOL_USESSL=true
-
- # Domain: you need to define this if you wish to enable any options
--# CMD_DOMAIN=example.org:1337
-+CMD_DOMAIN=example.org:1337
-```
-
-After deploying this configuration, run `certbot` to make it available over HTTPS.
-See [this article](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04) for more information.
+If you prefer traditional Docker deployment, you can still use the original `docker-compose.yml` file:
 
 ### Add Discord bot support
 

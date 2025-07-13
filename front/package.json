@@ -46,7 +46,7 @@
     "@types/apollo-upload-client": "^18.0.0",
     "@types/babel__core": "^7",
     "@types/color-hash": "^1.0.5",
-    "@types/node": "^22.7.7",
+    "@types/node": "^24.0.13",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "autoprefixer": "^10.4.20",
     "babel-loader": "^9.2.1",

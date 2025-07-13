@@ -2,11 +2,11 @@
 
 # CTFNote - Coolify Optimized
 
-> **Note**: This is a Coolify-optimized fork of the original [CTFNote](https://github.com/TFNS/CTFNote) project. This version is specifically configured for easy deployment with Coolify.
+> **Note**: This is a Coolify-optimized fork of the original [CTFNote](https://github.com/TFNS/CTFNote) project. This version is specifically configured for easy deployment with Coolify and is realized by **Team M0TH.SH**.
 
 ## Introduction
 
-CTFNote is a collaborative tool aiming to help CTF teams to organise their work. This fork provides a streamlined deployment experience for Coolify users with pre-configured Docker Compose files, environment templates, and automated SSL/security settings.
+CTFNote is a collaborative tool aiming to help CTF teams to organize their work. This fork provides a streamlined deployment experience for Coolify users with pre-configured Docker Compose files, environment templates, and automated SSL/security settings.
 
 [![Screenshot of the task list](screenshots/task_small.webp)](screenshots/task.png)
 
@@ -195,8 +195,20 @@ The value of every variables are explained in this file.
 
 [![Screenshot of pad](screenshots/pad_small.webp)](screenshots/pad.png)
 
+## Team M0TH.SH
+
+This Coolify-optimized version of CTFNote is maintained by **Team M0TH.SH**. We specialize in making popular CTF tools easier to deploy and manage in modern containerized environments.
+
+### Our Contributions
+- 🚀 **Coolify Integration**: Seamless deployment with Coolify
+- 🔒 **Security Hardening**: Production-ready security configurations
+- 📚 **Documentation**: Comprehensive deployment guides
+- 🛠️ **Automation**: Setup scripts and environment templates
+
 ## Contributing
 
 We have a [Discord server](https://discord.gg/uzTybeYuBg) where we discuss the development and feature of CTFNote.
 
 A contribution guide is available here: [CONTRIBUTING.md](CONTRIBUTING.md)
+
+For contributions specific to this Coolify fork, please open issues or pull requests in this repository.

@@ -1,114 +1,114 @@
 # CTFNote Coolify Deployment Guide
 
-Deze versie van CTFNote is geconfigureerd voor deployment met Coolify.
+This version of CTFNote is configured for deployment with Coolify and is realized by **Team M0TH.SH**.
 
 ## Quick Start
 
 1. **Import in Coolify:**
-   - Ga naar je Coolify dashboard
-   - Klik op "New Resource" > "Application"
-   - Kies "Docker Compose" als type
-   - Voer de repository URL in van je fork
+   - Go to your Coolify dashboard
+   - Click on "New Resource" > "Application"
+   - Choose "Docker Compose" as type
+   - Enter the repository URL of your fork
 
-2. **Configuratie:**
-   - Gebruik `docker-compose.coolify.yml` als compose bestand
-   - Kopieer de inhoud van `.env.coolify` naar de environment variabelen
-   - Zorg ervoor dat `FQDN` is ingesteld op je domain
+2. **Configuration:**
+   - Use `docker-compose.coolify.yml` as compose file
+   - Copy the content of `.env.coolify` to the environment variables
+   - Ensure that `FQDN` is set to your domain
 
-3. **Environment Variabelen:**
+3. **Environment Variables:**
    ```bash
-   # Verplicht
-   CMD_DOMAIN=je-domain.com
-   SESSION_SECRET=genereer-een-64-karakter-string
+   # Required
+   CMD_DOMAIN=your-domain.com
+   SESSION_SECRET=generate-a-64-character-string
    
-   # Optioneel
+   # Optional
    USE_DISCORD=true
-   DISCORD_BOT_TOKEN=je-bot-token
-   DISCORD_SERVER_ID=je-server-id
+   DISCORD_BOT_TOKEN=your-bot-token
+   DISCORD_SERVER_ID=your-server-id
    ```
 
-## Belangrijke Wijzigingen voor Coolify
+## Important Changes for Coolify
 
-### Docker Compose Aanpassingen
-- Port mapping aangepast naar `80:80` voor de front-end
-- Coolify labels toegevoegd voor beheer
-- Volumes geconfigureerd voor persistentie
+### Docker Compose Adjustments
+- Port mapping changed to `80:80` for the frontend
+- Coolify labels added for management
+- Volumes configured for persistence
 
-### Environment Configuratie
-- `.env.coolify` bestand toegevoegd met Coolify-specifieke instellingen
-- FQDN variabele gebruikt voor domein configuratie
-- SSL standaard ingeschakeld
+### Environment Configuration
+- `.env.coolify` file added with Coolify-specific settings
+- FQDN variable used for domain configuration
+- SSL enabled by default
 
-### Beveiliging
-- CSP (Content Security Policy) ingeschakeld
-- Filesystem uploads in plaats van imgur
-- Secure session configuratie
+### Security
+- CSP (Content Security Policy) enabled
+- Filesystem uploads instead of imgur
+- Secure session configuration
 
-## Handmatige Stappen
+## Manual Steps
 
 ### 1. Generate Session Secret
 ```bash
-# Gebruik een tool zoals pwgen of online generator
+# Use a tool like pwgen or online generator
 pwgen -s 64 1
 ```
 
-### 2. Discord Setup (Optioneel)
-Als je Discord integratie wilt:
-1. Maak een Discord bot aan
-2. Voeg de bot toe aan je server
-3. Configureer de environment variabelen
+### 2. Discord Setup (Optional)
+If you want Discord integration:
+1. Create a Discord bot
+2. Add the bot to your server
+3. Configure the environment variables
 
-### 3. Database Migratie
-De database wordt automatisch geïnitialiseerd bij eerste start.
+### 3. Database Migration
+The database is automatically initialized on first start.
 
 ## Troubleshooting
 
-### Veel Voorkomende Problemen
+### Common Problems
 
-1. **Service start niet:**
-   - Controleer of alle environment variabelen zijn ingesteld
-   - Verificeer dat SESSION_SECRET is geconfigureerd
+1. **Service won't start:**
+   - Check if all environment variables are set
+   - Verify that SESSION_SECRET is configured
 
-2. **Database connectie problemen:**
-   - Zorg dat de database service volledig is opgestart
-   - Controleer database credentials
+2. **Database connection problems:**
+   - Ensure the database service is fully started
+   - Check database credentials
 
-3. **Pad (HedgeDoc) werkt niet:**
-   - Controleer CMD_DOMAIN configuratie
-   - Zorg dat SSL correct is geconfigureerd
+3. **Pad (HedgeDoc) doesn't work:**
+   - Check CMD_DOMAIN configuration
+   - Ensure SSL is correctly configured
 
-### Logs Controleren
+### Checking Logs
 ```bash
 # In Coolify dashboard
-- Ga naar je applicatie
-- Klik op "Logs" tab
-- Bekijk real-time logs voor debugging
+- Go to your application
+- Click on "Logs" tab
+- View real-time logs for debugging
 ```
 
-## Productie Aanbevelingen
+## Production Recommendations
 
-1. **Beveiliging:**
-   - Verander standaard database passwords
-   - Gebruik sterke SESSION_SECRET
-   - Configureer SSL certificaten
+1. **Security:**
+   - Change default database passwords
+   - Use strong SESSION_SECRET
+   - Configure SSL certificates
 
 2. **Monitoring:**
    - Setup monitoring via Coolify
-   - Configureer alerting voor downtime
+   - Configure alerting for downtime
 
 3. **Backup:**
-   - Configureer database backups
+   - Configure database backups
    - Backup upload volumes
 
 ## Support
 
-Voor problemen met deze Coolify configuratie:
-1. Controleer eerst de logs in Coolify
-2. Vergelijk met originele CTFNote documentatie
-3. Check Coolify-specifieke configuratie
+For problems with this Coolify configuration:
+1. Check the logs in Coolify first
+2. Compare with original CTFNote documentation
+3. Check Coolify-specific configuration
 
-## Originele CTFNote
+## Original CTFNote
 
-Deze configuratie is gebaseerd op het originele CTFNote project:
+This configuration is based on the original CTFNote project:
 - Original: https://github.com/TFNS/CTFNote
-- Documentatie: Check README.md voor originele instructies
+- Documentation: Check README.md for original instructions

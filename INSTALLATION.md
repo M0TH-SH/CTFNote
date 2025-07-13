@@ -1,6 +1,6 @@
 # CTFNote Coolify Installation Guide
 
-This guide provides comprehensive instructions to deploy CTFNote using Coolify.
+This guide provides comprehensive instructions to deploy CTFNote using Coolify. This project is realized by **Team M0TH.SH**.
 
 ## Prerequisites
 

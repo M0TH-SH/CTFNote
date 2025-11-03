@@ -1304,7 +1304,7 @@ __metadata:
     dotenv: "npm:^16.4.5"
     eslint: "npm:^8.57.0"
     express: "npm:^4.21.1"
-    graphile-utils: "npm:4.13.0"
+    graphile-utils: "npm:4.14.1"
     graphql: "npm:^16.9.0"
     graphql-upload-ts: "npm:^2.1.2"
     ical-generator: "npm:^7.0.0"
@@ -2151,9 +2151,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphile-utils@npm:4.13.0, graphile-utils@npm:^4.4.4":
-  version: 4.13.0
-  resolution: "graphile-utils@npm:4.13.0"
+"graphile-utils@npm:4.14.1":
+  version: 4.14.1
+  resolution: "graphile-utils@npm:4.14.1"
   dependencies:
     debug: "npm:^4.1.1"
     graphql: "npm:>=0.9 <0.14 || ^14.0.2 || ^15.4.0"
@@ -2161,7 +2161,7 @@ __metadata:
   peerDependencies:
     graphile-build: ^4.5.0
     graphile-build-pg: ^4.5.0
-  checksum: 10/ded7810fdbbc40598ca4aef260cfc5b1f7cea835318d9e3673641d2ad15fd4651343c15f71880d7024bcb3d5c7f644cbfd4a200ebf2f17e38ca2e0b3f10360d0
+  checksum: 10/7e1a0c7611a3b24f2e703afef97066e5260d42acd3828789c477b4e3bf3dfa27c58ea3c9da7ea0e27700dfdbc649806a76ed489310607fb0eb75c95ee0b844b4
   languageName: node
   linkType: hard
 
@@ -2176,6 +2176,20 @@ __metadata:
     graphile-build: ^4.5.0
     graphile-build-pg: ^4.5.0
   checksum: 10/a3f9ec60ffc59b5ee4063fd69ad04315e6ed4c2112d8c294329f947c693b31fe6a5b3e2b07f6eeafe0c5a771efeba4f90e27c5bcc2f67f6cb9e29abdf5b3a4ac
+  languageName: node
+  linkType: hard
+
+"graphile-utils@npm:^4.4.4":
+  version: 4.13.0
+  resolution: "graphile-utils@npm:4.13.0"
+  dependencies:
+    debug: "npm:^4.1.1"
+    graphql: "npm:>=0.9 <0.14 || ^14.0.2 || ^15.4.0"
+    tslib: "npm:^2.0.1"
+  peerDependencies:
+    graphile-build: ^4.5.0
+    graphile-build-pg: ^4.5.0
+  checksum: 10/ded7810fdbbc40598ca4aef260cfc5b1f7cea835318d9e3673641d2ad15fd4651343c15f71880d7024bcb3d5c7f644cbfd4a200ebf2f17e38ca2e0b3f10360d0
   languageName: node
   linkType: hard
 

@@ -6709,7 +6709,7 @@ __metadata:
     eslint-plugin-vue: "npm:^9.31.0"
     graphql: "npm:^16.9.0"
     graphql-tag: "npm:^2.12.6"
-    hotkeys-js: "npm:^3.13.7"
+    hotkeys-js: "npm:^3.13.15"
     jszip: "npm:^3.10.1"
     lint-staged: "npm:^15.2.10"
     prettier: "npm:^3.3.3"
@@ -8702,10 +8702,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hotkeys-js@npm:^3.13.7":
-  version: 3.13.7
-  resolution: "hotkeys-js@npm:3.13.7"
-  checksum: 10/54362960af8c9eece38af5cc8fdf71ed93abf1e45b1b64fb1b532d926ab524124e8ac9949577123cd04791f297052a1ea7370c520971f1bec6870df77ffb7fde
+"hotkeys-js@npm:^3.13.15":
+  version: 3.13.15
+  resolution: "hotkeys-js@npm:3.13.15"
+  checksum: 10/f10314bd171c5b265d923e8eae3b0c4d96899a46f956caa6468e8c5c4d1755a08f3986d7ece9f331d783ae1876d535e9471330176d27a5e06568b3e7f7cb7c4a
   languageName: node
   linkType: hard
 
